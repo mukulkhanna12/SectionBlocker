@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <form>            
+            <div class="row">
+                <div class="col text-center">
+                    <h4 width="100%"><img src="tagImage.png" style="margin-left:-20px" width="30px">&nbsp; Section Blocker</h4>
+                </div>
+                <section id="ifVideosBlock" >
+                <div class="col-12 form-group">
+                    <hr class="topLine">    
+                            <label>Activate time</label>
+                            <select id="time">
+                                <option value="0">Block Videos</option>
+                                <option value="15">15 Minutes</option>
+                                <option value="30">30 Minutes</option>
+                                <option value="60">1 Hour</option>
+                                <option value="120">2 Hours</option>
+                            </select>
+                        <hr class="style-two">
+                </div>
+                <span>Quotes:</span>
+                <div class="col setShow offset-5 custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="idOfShow" value='show' name="groupOfDefaultRadios">
+                        <label class="custom-control-label" for="idOfShow">Show</label>
+                </div>
+                    <!-- Group of default radios - option 2 -->
+                <div class="col setHide offset-9 custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="idOfHide" value='hide'  name="groupOfDefaultRadios">
+                    <label class="custom-control-label" for="idOfHide">Hide</label>
+                </div>
+                <div class="col">
+                <hr class="style-two">
+                    <button type="submit" id="submit" class="offset-5 btn btn-primary" name="submit">Submit</button>
+                </div>
+                </section>
+                
+                <div class="col-12" id="ifVideosShow">
+                        <hr class="style-two">
+                        <div class="text-center">
+                            <strong><h4 width="100%">Time Left</h4></strong>
+                        </div>
+                        <div class="row">
+                            <div class='hours col-3 offset-1 card'>
+                                 <span id='hours'></span> 
+                            </div>
+                            <div class='mint col-3 card'>
+                                <span id='mint'></span>    
+                            </div>
+                            <div class='sec col-3 card'>
+                                <span id='secd'></span>   
+                            </div>
+                            <div class='col-3' style="margin-left:20px;">
+                                <span>HRS</span>                               
+                           </div>
+                           <div class='col-3' style="margin-left:8px;">
+                               <span>MIN</span>                               
+                           </div>
+                           <div class='col-3' style="margin-left:10px;">
+                               <span>SEC</span>                               
+                           </div>
+                        </div>
+                        <span id='timer_div'></span>
+                        <br>                 
+                        <button type="submit" id='blockVideos' class="btn btn-success" style="margin-left:40px">Block Videos Right Now</button>
+                </div>
+            </div>
+        </form>        
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
