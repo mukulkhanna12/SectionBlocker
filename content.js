@@ -6,7 +6,7 @@ $(document).ready(function(){
         if (dataObj.time!=0)
         {
             var dt = new Date(),sec=0,hours=0,min=0;                
-            var currentDate=dt.getMonth()+'/'+dt.getDate()+'/'+dt.getFullYear();
+            var currentDate=(dt.getMonth()+1)+'/'+dt.getDate()+'/'+dt.getFullYear();
             var currentTime=dt.getHours()+':'+dt.getMinutes()+':'+dt.getSeconds();
             var combain=currentDate+' '+currentTime;
             var date1 = new Date(combain);
@@ -51,7 +51,7 @@ $(document).ready(function(){
                 var div=$("<div id='myContent' class='myContentBox'></div>");
                 $("#related").append(div);
 
-                var p1=$("<p id='quorts' class='qoutes_header'>If you don’t build your dream someone will hire you to help build theis.</p>");
+                var p1=$("<p id='quorts' class='qoutes_header'>If you don’t build your dream someone will hire you to help build theirs.</p>");
                 $(div).append(p1);
 
                 var p2=$("<p id='speakerName' align='right' class='qoutes_name'>\"Tony Gaskins\"</p>");

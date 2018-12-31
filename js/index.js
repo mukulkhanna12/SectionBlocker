@@ -13,11 +13,19 @@ $(document).ready(function(){
         var dt = new Date(),sec=0,hours=0,min=0;                
         if(obj.timeUpReload)
         {   
-            var currentDate=dt.getMonth()+'/'+dt.getDate()+'/'+dt.getFullYear();
+            var currentDate=(dt.getMonth()+1)+'/'+dt.getDate()+'/'+dt.getFullYear();
             var currentTime=dt.getHours()+':'+dt.getMinutes()+':'+dt.getSeconds();
             var combain=currentDate+' '+currentTime;
             var date1 = new Date(combain);
+
             var date2 = new Date(obj.last_time);
+            console.log('Date = '+currentDate);
+            console.log('time ='+currentTime);
+            console.log('combain ='+combain);
+            console.log('date1 ='+date1);
+            console.log('date2 ='+date2);
+            console.log('obj.last_time ='+obj.last_time);            
+
             sec = (date2.getTime() / 1000.0) - (date1.getTime() / 1000.0);
             hours = parseInt(sec / 60 / 60);
             sec = sec - hours * 60 * 60;
@@ -52,7 +60,6 @@ $(document).ready(function(){
                 getM.text(min);
                 getS.text(sec);
                 var $worked=hours+":"+min+":"+sec;
-
                 var interval = setInterval(function() 
                 {
                     var myTime = $worked;
@@ -94,7 +101,7 @@ $(document).ready(function(){
         var obj2=r.data;
         var today = new Date();
         var time=today.getHours()+':'+today.getMinutes()+':'+today.getSeconds();
-        var date=today.getMonth()+'/'+today.getDate()+'/'+today.getFullYear();
+        var date=(today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
             
             obj2.last_time=date+' '+time;
             obj2.time=0;               
@@ -130,7 +137,7 @@ $(document).ready(function(){
                 var today = new Date();        
                 today.setMinutes(today.getMinutes() + getTime);
                 var time=today.getHours()+':'+today.getMinutes()+':'+today.getSeconds();
-                var date=today.getMonth()+'/'+today.getDate()+'/'+today.getFullYear();
+                var date=(today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
                 obj2.last_time=date+' '+time;
                 obj2.timeUpReload=true;
             }

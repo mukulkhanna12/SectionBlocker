@@ -1,6 +1,6 @@
 var today = new Date();
 var time=today.getHours()+':'+today.getMinutes()+':'+today.getSeconds();
-var date=today.getMonth()+'/'+today.getDate()+'/'+today.getFullYear();
+var date=(today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
 time=date+' '+time;
 var info={'time':0,'quorts':'show','last_time':time,'timeUpReload':false};
 
