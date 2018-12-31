@@ -1,7 +1,7 @@
 {
  
   "name": "Section Blocker",
-  "version": "1.4.12",
+  "version": "1.4.19",
   "manifest_version":2,
   "description": "It pull's you out from the youtube world to the real world.",
   "permissions": [
