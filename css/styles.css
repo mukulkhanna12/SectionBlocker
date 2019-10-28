@@ -1,0 +1,148 @@
+
+#myContent{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  word-spacing: 5px; 
+  /* font-family: 'Arvo', serif; */
+  min-height:410px;
+}
+.qoutes_header{
+  padding:100px 20px;
+     text-transform: uppercase;
+     font-weight: bold;
+     font-size: 24px;
+     /* letter-spacing: 0.085em; */
+ }
+ .qoutes_name{
+  
+  margin-top:-80px;
+  margin-right: 50px ;  
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.085em;
+ }
+ 
+@media only screen and (max-width: 570px) {
+  .qoutes_name{
+    margin-top:-80px;
+    margin-left: 220px !important;  
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.085em;
+  }  
+}
+@media only screen and (min-width: 570px) and (max-width: 768px) {
+ 
+  .qoutes_name{
+        margin-top:-80px;
+        margin-left: 400px !important;  
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: 0.085em;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+ 
+  .qoutes_name{
+        margin-top:-80px;
+        margin-left: 550px !important;  
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: 0.085em;
+  }
+}
+
+/*new slider*/
+
+#slides {
+overflow: hidden;
+position: relative;
+width: 100%;
+height: 250px;
+}
+
+#slides ul {
+list-style: none;
+width:100%;
+height:250px;
+margin: 0;
+padding: 0;
+position: relative;
+}
+
+ #slides li {
+width:100%;
+height:250px;
+float:left;
+text-align: center;
+position: relative;
+font-family:lato, sans-serif;
+}
+/* Styling for prev and next buttons */
+.myContentBox .btn-bar{
+    max-width: 346px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: 40px;
+    width: 100%;
+}
+
+.myContentBox #buttons {
+padding:0 0 5px 0;
+float:right;
+}
+
+.myContentBox #buttons a {
+text-align:center;
+display:block;
+font-size:50px;
+float:left;
+outline:0;
+margin:0 60px;
+color:#b14943;
+text-decoration:none;
+display:block;
+padding:9px;
+width:35px;
+}
+
+.myContentBox a#prev:hover, .myContentBox a#next:hover {
+color:#FFF;
+text-shadow:.5px 0px #b14943;  
+}
+
+.myContentBox .quote-phrase, .myContentBox .quote-author {
+font-family:sans-serif;
+font-weight:300;
+display: table-cell;
+vertical-align: middle;
+padding: 5px 20px;
+font-family:'Lato', Calibri, Arial, sans-serif;
+}
+
+.myContentBox .quote-phrase {
+height: 200px;
+font-size:24px;
+color:#FFF;
+font-style:italic;
+text-shadow:.5px 0px #b14943;  
+}
+
+.myContentBox .quote-marks {
+font-size:30px;
+padding:0 3px 3px;
+position:inherit;
+}
+
+.myContentBox .quote-author {
+font-style:normal;
+font-size:20px;
+color:#b14943;
+font-weight:400;
+height: 30px;
+}
+
+.myContentBox .quoteContainer, .myContentBox .authorContainer {
+display: table;
+width: 100%;
+}
