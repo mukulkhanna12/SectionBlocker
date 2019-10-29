@@ -1,7 +1,8 @@
 $(document).ready(function () {
-    chrome.storage.local.get(["data"], function (r) {
+    chrome.storage.local.get(["data","defaultDetails"], function (r) {
         var dataObj = r.data;
-        var sliderSpeed = 1000;
+        var sliderSpeed = dataObj.sliderSpeed;
+        var backgroundColor = dataObj.backgroundColor;
 
         if (dataObj.time != 0) {
             var dt = new Date(),
@@ -46,14 +47,14 @@ $(document).ready(function () {
 
         function quortsShow() {
 
-            $("#related").css({"background-color":"#CCCC99", "margin-left":"20px", "min-width": "450px"});
+            $("#related").css({"background-color":backgroundColor, "margin-left":"20px", "min-width": "450px"});
             var main_body = $("<div id='myContent' class='myContentBox cart'></div>");
             $("#related").append(main_body);
             
             var pointers = $('<div class="btn-bar">'+
                                 '<div id="buttons">'+
                                     '<a id="prev" href="#"><</a>'+
-                                    '+<a id="next" href="#">></a>'+
+                                    '<a id="next" href="#">></a>'+
                                 '</div>'+
                             '</div>');
             $(main_body).append(pointers);

@@ -19,13 +19,7 @@ $(document).ready(function(){
             var date1 = new Date(combain);
 
             var date2 = new Date(obj.last_time);
-            console.log('Date = '+currentDate);
-            console.log('time ='+currentTime);
-            console.log('combain ='+combain);
-            console.log('date1 ='+date1);
-            console.log('date2 ='+date2);
-            console.log('obj.last_time ='+obj.last_time);            
-
+   
             sec = (date2.getTime() / 1000.0) - (date1.getTime() / 1000.0);
             hours = parseInt(sec / 60 / 60);
             sec = sec - hours * 60 * 60;
@@ -120,26 +114,48 @@ $(document).ready(function(){
         });
         });
   
+    $("input[name=groupOfDefaultRadios]").on('change', function(){
+        if($(this).val() == "show"){
+            var settingSection= "<input type='text' placeholder='te'>";
+            $("#setting").append(settingSection);
+        }else{
+            $("#setting").html("");
+        }
+    });
 
     $("#submit").click(function(){
-        chrome.storage.local.get(['data'], function(r) {
-        var obj2=r.data;
+        chrome.storage.local.get(['data','defaultDetails'], function(r) {
+        var obj2 = r.data;
         var arrTime=[15,30,60,120];
         var getTime=parseInt(document.getElementById('time').value);
         var quotes=$('input[name=groupOfDefaultRadios]:checked').val();
+        var defaultSetting = $('#defaultSetting').val();
+        var textColor;
+        var backgroundColor;
+
+        if(defaultSetting == true){
+            var df = r.defaultDetails;
+            textColor = df.textColor;
+            backgroundColor = df.backgroundColor;
+        }else{
+            textColor = $('#textColor').val();
+            backgroundColor = $('#backgroundColor').val();
+        }
 
         if(quotes=='show' || quotes=='hide')
         {
-            obj2.quorts=quotes;                
+            obj2.quorts=quotes;
             obj2.time=getTime;
+            obj2.textColor = textColor;
+            obj2.backgroundColor = backgroundColor;
 
             if(arrTime.indexOf(getTime)>= 0){
                 var today = new Date();        
                 today.setMinutes(today.getMinutes() + getTime);
                 var time=today.getHours()+':'+today.getMinutes()+':'+today.getSeconds();
                 var date=(today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
-                obj2.last_time=date+' '+time;
-                obj2.timeUpReload=true;
+                obj2.last_time = date+' '+time;
+                obj2.timeUpReload = true;
             }
             chrome.storage.local.set({'data': obj2},function(){
                 chrome.tabs.query({active: true, currentWindow: true}, function (arrayOfTabs) {
